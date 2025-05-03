@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Using Flexbox for navigation */
+            justify-content: space-around; /* Distribute items evenly */
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex; /* Using Flexbox for the main container */
+            padding: 20px;
+            gap: 20px; /* Space between main and sidebar */
+        }
+
+        main {
+            flex: 3; /* Main content takes up 3/4 of the available space */
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        aside {
+            flex: 1; /* Sidebar takes up 1/4 of the available space */
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Queries for Responsiveness */
+
+        /* Mobile View (up to 768px) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack main and sidebar vertically */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack navigation items vertically */
+                align-items: center; /* Center navigation items */
+            }
+
+            nav ul li {
+                margin: 0.5em 0;
+            }
+
+            main, aside {
+                width: 100%; /* Make main and sidebar take full width */
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Tablet View (769px to 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                flex-direction: row; /* Keep main and sidebar side-by-side */
+            }
+
+            main {
+                flex: 2; /* Adjust proportion for tablet */
+            }
+
+            aside {
+                flex: 1;
+            }
+        }
+
+        /* Desktop View (1025px and above) - Default styles apply */
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <h1>Welcome to the Main Page</h1>
+            <p>This is the main section of our webpage. We are are a Nail parlor shop.</p>
+            <p>We sell both nail appliances and can even get to do your nails.</p>
+            <p>You can get to see what we offer and the prices</p>
+        </main>
+        <aside>
+            <h2>Sidebar</h2>
+            <p>This are some of the things we offer and the corresponding prices.</p>
+            <ul>
+                <li>Pedicure - Ksh.1500</li>
+                <li>Manicure - Ksh. 2100</li>
+                <li>Tips and gel - Ksh. 800</li>
+                <li>Gel - Ksh. 500</li>
+                <li>Polish - Ksh. 200</li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Responsive Layout</p>
+    </footer>
+</body>
+</html>
